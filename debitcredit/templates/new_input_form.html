@@ -1,0 +1,7 @@
+{% block content %}
+<form method="post" action="/story/save">
+{% csrf_token %}
+{{form|safe|linebreaks}}
+<input type="submit" name="save" value="Save" />
+</form>
+{% endblock %}

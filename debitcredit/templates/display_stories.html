@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for ticket in tickets %}
+<article>
+<h4>{{ ticket.title }}</h4>
+<dl>
+	<dt>Story Type : </dt>
+	<dd>{{ticket.storytype}}</dd>
+	<dt>State : </dt>
+	<dd>{{ticket.storystate.story_type}}</dd>
+	<dt>Points : </dt>
+	<dd>{{ticket.points}}</dd>
+	<dt>Requester : </dt>
+	<dd>{{ticket.owner}}</dd>
+	<dt>Owner : </dt>
+	<dd>{{ticket.requester}}</dd>
+	<dt>Description</dt>
+	<dd>{{ ticket.description|safe|linebreaks}}</dd>
+	<dt>Labels : </dt>
+	<dd>{{ ticket.label }}</dd>
+</dl>
+</article>
+{% endfor %}
+
+{% endblock %}
